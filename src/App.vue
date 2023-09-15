@@ -1,6 +1,6 @@
 <script setup>
   import{ ref } from "vue";
-  
+
 
   const travel = ref("");
   const money = ref(0);
@@ -45,7 +45,7 @@
   Details.date = '';
   Details.time = '';
   Details.tables = '';
-  alert("Booking Complete!!! , Please Check Your Booking Details at The bottom of page")
+  alert("Booking Complete!!!,  Check Your Booking Details at The bottom of page")
 }
 
   
