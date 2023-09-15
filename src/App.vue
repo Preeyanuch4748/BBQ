@@ -45,7 +45,7 @@
   Details.date = '';
   Details.time = '';
   Details.tables = '';
-  alert("Booking Complete!!!,  Check Your Booking Details at The bottom of page")
+  alert("การจองสำเร็จ!!! โปรดเช็คการจองที่ด้านล่างของเว็บ")
 }
 
   
@@ -59,35 +59,35 @@
 </script>
 
 <template>
-  <h1 style="color: white ;">Select Your Favorite Restaurant</h1> <br>
-  <div class="container-input" style="background-color: #5d7585;">
-    <h4 style="color: rgb(245, 0, 0); font-weight: bold;">** กรุณากรอกข้อมูลให้ครบถ้วนก่อนจองโต๊ะ **</h4>
+  <h1 style="color: rgb(255, 114, 114) ;">🍵เลือกร้านกาแฟที่ต้องการ🍵</h1> <br>
+  <div class="container-input" style="background-color: #ffe1c6;">
+    <h4 style="color: rgb(214, 28, 28); font-weight: bold;">** กรุณากรอกข้อมูลให้ครบถ้วนก่อนจองโต๊ะ **</h4>
     <div class="cont">
           <div class="text-input">
-            Name &nbsp; <input type="text" v-model="Details.name" required> 
+            ชื่อผู้จอง&nbsp; <input type="text" v-model="Details.name" required> 
           </div>
           <div class="text-input">
-            Tel &nbsp; <input type="tel" v-model="Details.tel" required> 
+          โทรศัพท์&nbsp; <input type="tel" v-model="Details.tel" required> 
+          </div>
+          <div class="text-input">
+            จำนวน&nbsp; <input type="number" v-model="Details.tables" required> 
           </div>
           <div class="text-input">  
-            DD/MM/YYYY &nbsp; <input type="date" v-model="Details.date" required>
+            วัน&nbsp; <input type="date" v-model="Details.date" required>
           </div>
           <div class="text-input">
-            Time &nbsp; <input type="time" v-model="Details.time" required>
-          </div>
-          <div class="text-input">
-            Tables &nbsp; <input type="number" v-model="Details.tables" required> 
+            เวลา&nbsp; <input type="time" v-model="Details.time" required>
           </div>
     </div>
   </div>
-  <div class="container text-center" style="background-color: ; border-radius: 20px;">
+  <div class="container text-center" style="background-color: ; border-radius: 10px;">
     <div class="row" align="center">
       <div class="col" v-for="(item, index) in travelList" :key="index">
-        <div class="card" style="width: 18rem; background-color: #7993a4; margin: 25px; border-radius: 30px;">
+        <div class="card" style="width: 18rem; background-color: #e1bcea; margin: 30px; border-radius: 10px;">
           <img :src="item.img" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
-            <p class="card-text">Some quick example text.</p>
+            <p class="card-text">ร้านกาแฟเชียงใหม่ในดวงใจ ที่ไปกินตั้งแต่ยังมีแค่สาขาเดียว เป็นร้านกาแฟที่โดดเด่นด้วยความคิดสร้างสรรค์ในการผสมผสานเมนูแปลก ๆ เข้ากับกาแฟ และมีจุดเด่นคือ Cold Brew ที่รสละมุน ไม่เปรี้ยว ไม่ขม กลมกล่อมและเด็ดมาก</p>
              <br>
             <a href="#" class="btn" @click="booking(item, Details)">จองโต๊ะ</a>
           </div>
@@ -97,12 +97,12 @@
   </div> <br>
   <table class="table table-dark table-striped" v-if="bookingList.length > 0">
   <thead>
-    <h4>Details</h4>
+    <h4>รายละเอียด</h4>
     <tr>
       <th scope="col">ชื่อร้าน</th>
       <th scope="col">ชื่อผู้จอง</th>
       <th scope="col">เบอร์โทร</th>
-      <th scope="col">วัน/เดือน/ปี</th>
+      <th scope="col">ว/ด/ป</th>
       <th scope="col">เวลา</th>
       <th scope="col">จำนวนโต๊ะ</th>
     </tr>
@@ -120,19 +120,26 @@
 </table> <br>
 
   <div class="color">
-    <h1>ไปเที่ยวกันมั้ย....</h1>
+    <h1>ไปเที่ยวกันมั้ย👩🏻‍💻?</h1>
     <input type="radio" value="a" v-model="travel" />ภูเขา
     <input type="radio" value="b" v-model="travel" />ทะเล &nbsp;
     จำนวนเงิน &nbsp;
     <input type="number" v-model="money">
-    <div v-if="money < 100">อยู่บ้านนอน</div>
-    <div v-else-if="money >= 100 && money < 1000000">ขึ้นรถไปเที่ยว</div>
-    <div v-else-if="money >= 1000000">ขับเครื่องบินส่วนตัวไป</div>
+    <div v-if="money < 100">อยู่บ้านนอน💤</div>
+    <div v-else-if="money >= 100 && money < 1000000">ขึ้นรถไปเที่ยว🚗</div>
+    <div v-else-if="money >= 1000000">ขับเครื่องบินส่วนตัว🛩️</div>
     <div v-else-if="money <= 0">กรุณากรอกจำนวนเงิน</div>
-    <div v-if="travel === 'a' ">ภาพภูเขา</div>
-    <div v-else>ภาพทะเล</div>
+    <div v-if="travel === 'a' ">⛰️</div>
+    <div v-else>🏝️</div>
     <br>
     <button type="button" v-if="money < 50" disabled style="background-color: rgba(255, 0, 0, 0.142);">Let's Go</button>
-    <button type="button" v-else style="background-color: green;">Let's Go</button>
+    <button type="button" v-else style="background-color: rgb(252, 77, 13);">Let's Go</button>
+  </div><br>
+    <footer class="footer">
+    <div class="container">
+      <div class="footer-copyright">
+      &copy; 2023 บริการทุกระดับประทับใจ ขอบคุณที่ใช้บริการ
+    </div>
   </div>
+  </footer>
 </template>
