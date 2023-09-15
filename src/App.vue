@@ -25,8 +25,6 @@
   const bookingList = ref([
   ]);
 
-  
-
   function booking(restaurant, details) {
 
   const bookingData = {
