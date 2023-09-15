@@ -48,13 +48,6 @@
   alert("การจองสำเร็จ!!! โปรดเช็คการจองที่ด้านล่างของเว็บ")
 }
 
-  
-  
-//   //function
-// function booking(name){
-//   //name -> bookingList []
-//   bookingList.value.push(name)
-// }
 
 </script>
 
