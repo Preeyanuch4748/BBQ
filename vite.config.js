@@ -13,5 +13,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       vue: '@vue/compat',
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      external: ['/Users/pookky/BBQ/style.css'],
+    },
+  },
 })
+
